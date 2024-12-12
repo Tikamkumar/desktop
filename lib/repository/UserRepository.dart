@@ -1,7 +1,7 @@
 
 import 'dart:convert';
 
-import 'package:desktop/data/remote/ApiService.dart';
+import 'package:desktop/data/remote/api_service.dart';
 
 class UserRepository {
   final ApiService _apiService = ApiService();

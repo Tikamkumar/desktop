@@ -37,4 +37,26 @@ class DealerViewModel {
       return null;
     }
   }
+
+  Future<String> updateDealer(Map<String, String> header,  Map<String, dynamic> param, Object body) async {
+    try {
+      final response = await _dealerRepository.updateDealer(header, body, param);
+      log(response.toString());
+      return response;
+    } catch(exp) {
+      log(exp.toString());
+      return exp.toString();
+    }
+  }
+
+  Future<String> deleteDealer(Map<String, String> header,  Map<String, dynamic> param) async {
+    try {
+      final response = await _dealerRepository.deleteDealer(header, param);
+      log(response.toString());
+      return response;
+    } catch(exp) {
+      log(exp.toString());
+      return exp.toString();
+    }
+  }
 }
