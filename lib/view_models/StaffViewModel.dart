@@ -1,7 +1,7 @@
 import 'dart:developer';
 
-import 'package:desktop/model/staff_model.dart';
-import 'package:desktop/repository/StaffRepository.dart';
+import 'package:betting/model/staff_model.dart';
+import 'package:betting/repository/StaffRepository.dart';
 
 class StaffViewModel {
   StaffRepository _repository = StaffRepository();

@@ -11,8 +11,7 @@ class CutBidding extends StatefulWidget {
 class _cutBiddingState extends State<CutBidding> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Padding(
+    return Padding(
           padding: const EdgeInsets.all(10.0),
           child: Column(
              crossAxisAlignment: CrossAxisAlignment.start,
@@ -427,9 +426,8 @@ class _cutBiddingState extends State<CutBidding> {
               ]
               ,
               ),
-        )
-    ,
-    );
+        );
+
   }
 
   List<DropdownMenuItem<String>> get dropdownItems {

@@ -12,7 +12,7 @@ class _dealerHistoryState extends State<DealerHistory> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return /*Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title: const Text('DEALER HISTORY', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w500)),
@@ -24,7 +24,7 @@ class _dealerHistoryState extends State<DealerHistory> {
         width: MediaQuery.of(context).size.width,
         color: Colors.blue[50],
         padding: const EdgeInsets.all(12),
-        child: Column(
+        child: */Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SizedBox(
@@ -155,9 +155,9 @@ class _dealerHistoryState extends State<DealerHistory> {
               color: Colors.white,
             )
           ],
-        ),
+        )/*,
       ),
-    );
+    )*/;
   }
   List<DropdownMenuItem<String>> get dropdownItems {
     List<DropdownMenuItem<String>> menuItems = [

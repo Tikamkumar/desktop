@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:desktop/data/remote/api_service.dart';
-import 'package:desktop/model/dealer_model.dart';
+import 'package:betting/data/remote/api_service.dart';
+import 'package:betting/model/dealer_model.dart';
 import '../model/staff_model.dart';
 
 class StaffRepository {
@@ -60,6 +60,7 @@ class StaffRepository {
 
   Future<Map<String, dynamic>?> getRole(Map<String, String> header, Map<String, String> param) async {
     final response = await _apiService.getRole(header, param);
+    log(response.body.toString());
     if(response.statusCode == 200) {
       final list = jsonDecode(response.body)['data'];
       return {'name': list[0]['name'], 'id': list[0]['id']};

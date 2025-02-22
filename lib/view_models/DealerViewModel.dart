@@ -1,7 +1,7 @@
 
 import 'dart:developer';
 
-import 'package:desktop/repository/DealerRepository.dart';
+import 'package:betting/repository/DealerRepository.dart';
 
 import '../model/dealer_model.dart';
 
@@ -21,6 +21,17 @@ class DealerViewModel {
   Future<List<DealerModel>?> getAllDealers(Map<String, String> header) async {
     try {
       final response = await _dealerRepository.getAllDealer(header);
+      return response;
+    } catch(exp) {
+      log(exp.toString());
+      return null;
+    }
+  }
+
+  Future<List<Map<String, String>>?> getAllOpenDealers(Map<String, String> header, Map<String, String> param) async {
+    try {
+      final response = await _dealerRepository.getAllOpenDealer(header, param);
+      log("Response : "+ response.toString());
       return response;
     } catch(exp) {
       log(exp.toString());

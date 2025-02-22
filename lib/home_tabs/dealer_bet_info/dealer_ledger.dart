@@ -1,4 +1,4 @@
-import 'package:desktop/home_tabs/dealer_bet_info/reporting/dealer_history.dart';
+import 'package:betting/home_tabs/dealer_bet_info/reporting/dealer_history.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -13,8 +13,7 @@ class _DealerState extends State<DealerLedger> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
+    return Column(
         children: <Widget>[
           Container(width: MediaQuery.of(context).size.width, color: Colors.white, child: Text('DEALER LEDGER', style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.w500))),
           Container(
@@ -393,8 +392,8 @@ class _DealerState extends State<DealerLedger> {
           ),
 
         ],
-      ),
-    );
+      )
+    ;
   }
   List<DropdownMenuItem<String>> get dropdownItems {
     List<DropdownMenuItem<String>> menuItems = [

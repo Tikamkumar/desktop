@@ -1,5 +1,5 @@
-
-import 'package:desktop/repository/UserRepository.dart';
+import 'dart:developer';
+import 'package:betting/repository/UserRepository.dart';
 import 'package:flutter/material.dart';
 
 class UserViewModel  {
@@ -8,8 +8,10 @@ class UserViewModel  {
   Future<Map<String, dynamic>> signIn(Map<String, String> header, Object body) async {
     try {
       final response = _userRepository.signIn(header, body);
+      log('User View Model Success');
       return response;
     } catch(exp) {
+      log('User View Model failed');
       return {'error': exp.toString()};
     }
   }

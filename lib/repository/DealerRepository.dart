@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'dart:developer';
-import 'package:desktop/data/remote/api_service.dart';
+import 'package:betting/data/remote/api_service.dart';
 
 import '../home_tabs/user/dealer.dart';
 import '../model/dealer_model.dart';
@@ -22,6 +22,19 @@ class DealerRepository {
     if(response.statusCode == 200) {
        List<dynamic> list = jsonDecode(response.body)['data']['dealers'];
        return List.generate(list.length, (index) => DealerModel.fromJson(list, index));
+    } else {
+      log(response.body);
+      return null;
+    }
+  }
+
+  Future<List<Map<String, String>>?> getAllOpenDealer(Map<String, String> header, Map<String, String> param) async {
+    final response = await _apiService.getAllOpenDealer(header, param);
+    log('Response : '+ response.body.toString());
+    if(response.statusCode == 200) {
+      log('Response : '+ response.body.toString());
+      List<dynamic> list = jsonDecode(response.body)['data'];
+      return List.generate(list.length, (index) => {'name': list[index]['name'], 'id': list[index]['id'].toString()});
     } else {
       log(response.body);
       return null;
